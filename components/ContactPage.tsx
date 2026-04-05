@@ -5,7 +5,7 @@ export function ContactPage() {
   const { lang } = usePreferences();
 
   return (
-    <div id="page-contact" className="page-section active">
+    <div className="w-full flex flex-col">
       <section style={{ paddingTop: '120px', paddingBottom: '80px' }}>
         <div className="container">
           <div className="section-header fade-in visible">

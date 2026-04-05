@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { usePreferences } from '@/hooks/usePreferences';
 import { getEstimate } from '@/lib/utils';
 import { baseRates } from '@/lib/utils';
@@ -9,19 +9,24 @@ export function CostEstimator() {
   const [service, setService] = useState<keyof typeof baseRates>('kitchen');
   const [grade, setGrade] = useState<keyof typeof baseRates['kitchen']>('essential');
   const [rooms, setRooms] = useState(3);
-  
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const calculateEstimate = () => {
     return getEstimate(size, service, grade, rooms, currency as any);
   };
 
+  if (!isMounted) {
+    return <section id="estimator" className="section-pad"><div className="container opacity-0">Loading estimator...</div></section>;
+  }
+
   return (
     <section id="estimator" className="section-pad">
       <div className="container">
-        <div className="section-header fade-in visible">
-          <span className="section-eyebrow">Instant Estimate</span>
-          <h2 className="section-title">Project Cost <em>Estimator</em></h2>
-          <p className="section-subtitle">Get a real-time estimate for your project</p>
-        </div>
+        {/* Header managed by parent component */}
         <div className="estimator-card fade-in visible">
           <div className="form-group">
             <label className="form-label">Room Size: <span>{size}</span> m²</label>

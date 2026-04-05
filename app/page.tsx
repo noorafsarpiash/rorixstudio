@@ -30,6 +30,23 @@ export default function Home() {
       </div>
       <div id="services">
         <DigitalBrochure />
+        
+        {/* Instant Property Valuation - Moved High Conversion Section */}
+        <div id="free-estimate" className="w-full relative py-20 bg-[var(--obsidian)]">
+          <div className="w-full max-w-[1200px] mx-auto px-5 mb-8">
+            <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[var(--gold)] to-transparent opacity-40 mb-12"></div>
+            <div className="text-center">
+              <span className="text-[12px] md:text-sm font-medium tracking-[0.35em] uppercase text-[var(--gold)] mb-4 block">
+                Instant Estimate
+              </span>
+              <h2 className="text-3xl md:text-5xl font-light tracking-wide text-white font-serif">
+                Instant <span className="text-[var(--gold)] italic">Property Valuation</span>
+              </h2>
+            </div>
+          </div>
+          <CostEstimator />
+        </div>
+
         <StyleQuiz />
       </div>
       <div id="portfolio">
@@ -38,12 +55,12 @@ export default function Home() {
       <div id="book">
         <BookingWizard />
       </div>
-      <div id="contact">
-        <MapSection />
-        <DigitalIdentity />
+      <div id="contact" className="w-full flex flex-col">
         <ContactPage />
+        <div className="w-full max-w-[1200px] mx-auto h-[1px] bg-gradient-to-r from-transparent via-[var(--gold)] to-transparent opacity-40 mb-16"></div>
+        <DigitalIdentity />
+        <MapSection />
       </div>
-      <CostEstimator />
       <Footer />
       <FloatingElements />
     </main>

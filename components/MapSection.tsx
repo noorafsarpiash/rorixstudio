@@ -2,7 +2,7 @@
 
 export function MapSection() {
   return (
-    <section id="contact" className="relative h-[600px] border-y border-[rgba(212,175,55,0.2)]">
+    <section className="relative h-[600px] border-y border-[rgba(212,175,55,0.2)]">
       <div className="absolute inset-0 z-0">
         <iframe 
           title="Google Map"

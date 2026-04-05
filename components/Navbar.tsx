@@ -35,6 +35,7 @@ export function Navbar() {
         <li><a href="#home" onClick={(e) => scrollTo('home', e)}>Home</a></li>
         <li><a href="#about" onClick={(e) => scrollTo('about', e)}>About</a></li>
         <li><a href="#services" onClick={(e) => scrollTo('services', e)}>Services</a></li>
+        <li><a href="#free-estimate" onClick={(e) => scrollTo('free-estimate', e)}>Estimate</a></li>
         <li><a href="#portfolio" onClick={(e) => scrollTo('portfolio', e)}>Portfolio</a></li>
         <li><a href="#book" onClick={(e) => scrollTo('book', e)}>Book</a></li>
         <li><a href="#contact" onClick={(e) => scrollTo('contact', e)}>Contact</a></li>
@@ -74,6 +75,7 @@ export function Navbar() {
               <li><a href="#home" onClick={(e) => scrollTo('home', e)} style={{ color: 'var(--white)', transition: 'color 0.3s' }}>Home</a></li>
               <li><a href="#about" onClick={(e) => scrollTo('about', e)} style={{ color: 'var(--white)', transition: 'color 0.3s' }}>About</a></li>
               <li><a href="#services" onClick={(e) => scrollTo('services', e)} style={{ color: 'var(--white)', transition: 'color 0.3s' }}>Services</a></li>
+              <li><a href="#free-estimate" onClick={(e) => scrollTo('free-estimate', e)} style={{ color: 'var(--gold)', transition: 'color 0.3s' }}>Free Estimate</a></li>
               <li><a href="#portfolio" onClick={(e) => scrollTo('portfolio', e)} style={{ color: 'var(--white)', transition: 'color 0.3s' }}>Portfolio</a></li>
               <li><a href="#book" onClick={(e) => scrollTo('book', e)} style={{ color: 'var(--white)', transition: 'color 0.3s' }}>Book</a></li>
               <li><a href="#contact" onClick={(e) => scrollTo('contact', e)} style={{ color: 'var(--white)', transition: 'color 0.3s' }}>Contact</a></li>
