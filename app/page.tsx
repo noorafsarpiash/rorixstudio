@@ -4,7 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Marquee } from "@/components/Marquee";
 import { DigitalBrochure } from "@/components/DigitalBrochure";
-import { Stats } from "@/components/Stats";
+import { AboutSection } from "@/components/AboutSection";
 import { StyleQuiz } from "@/components/StyleQuiz";
 import { Testimonials } from "@/components/Testimonials";
 import { Portfolio } from "@/components/Portfolio";
@@ -14,7 +14,7 @@ import { Footer } from "@/components/Footer";
 import { FloatingElements } from "@/components/FloatingElements";
 import { ContactPage } from "@/components/ContactPage";
 import { CostEstimator } from "@/components/CostEstimator";
-import { DigitalIdentity } from "@/components/DigitalIdentity";
+
 
 export default function Home() {
   return (
@@ -25,7 +25,7 @@ export default function Home() {
         <Marquee />
       </div>
       <div id="about">
-        <Stats />
+        <AboutSection />
         <Testimonials />
       </div>
       <div id="services">
@@ -57,8 +57,6 @@ export default function Home() {
       </div>
       <div id="contact" className="w-full flex flex-col">
         <ContactPage />
-        <div className="w-full max-w-[1200px] mx-auto h-[1px] bg-gradient-to-r from-transparent via-[var(--gold)] to-transparent opacity-40 mb-16"></div>
-        <DigitalIdentity />
         <MapSection />
       </div>
       <Footer />

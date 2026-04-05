@@ -84,7 +84,12 @@ export function CostEstimator() {
             <span className="estimate-value" style={{ display: 'block', fontSize: '32px', color: 'var(--gold)', fontFamily: "'Playfair Display', serif", margin: '16px 0' }}>
               {calculateEstimate()}
             </span>
-            <a href={`https://wa.me/971500000000?text=I want a quote for ${service}`} target="_blank" rel="noreferrer" className="estimate-cta" style={{ display: 'inline-block', marginTop: '16px', color: 'var(--gold)', borderBottom: '1px solid var(--gold)', paddingBottom: '2px', textTransform: 'uppercase', fontSize: '12px', letterSpacing: '0.1em' }}>
+            <a 
+              href={`https://wa.me/971500000000?text=I want a quote for ${service}`} 
+              target="_blank" 
+              rel="noreferrer" 
+              className="estimate-cta"
+            >
               Get Exact Quote on WhatsApp →
             </a>
           </div>

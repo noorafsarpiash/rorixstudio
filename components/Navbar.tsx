@@ -8,9 +8,9 @@ import { cn } from "@/lib/utils";
 
 export function Navbar() {
   const scrolled = useScroll(60);
-  const { lang } = usePreferences(); // Keeping lang if needed elsewhere, but removing setLang for switcher removal
-
+  const { lang, currency, setCurrency } = usePreferences();
   const [isOpen, setIsOpen] = useState(false);
+  const [showCurrencies, setShowCurrencies] = useState(false);
 
   const scrollTo = (id: string, e: React.MouseEvent) => {
     // We let native smooth scroll handle it if possible, but fallback
@@ -48,6 +48,45 @@ export function Navbar() {
         <li><a href="#contact" onClick={(e) => scrollTo('contact', e)}>Contact</a></li>
       </ul>
       <div className="nav-right">
+        <div className="relative hidden md:block mr-2">
+          <button 
+            className="flex items-center gap-1.5 text-[11px] uppercase tracking-widest text-[var(--gold)] border border-[var(--gold)]/30 px-3 py-1.5 rounded-sm hover:bg-[var(--gold)]/10 transition-colors"
+            onClick={() => setShowCurrencies(!showCurrencies)}
+          >
+            {currency} <span className="text-[8px] opacity-70">▼</span>
+          </button>
+          
+          <AnimatePresence>
+            {showCurrencies && (
+              <>
+                <div className="fixed inset-0 z-10" onClick={() => setShowCurrencies(false)} />
+                <motion.div 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  className="absolute top-full right-0 mt-2 py-2 bg-[#0F1115] border border-[var(--gold)]/30 rounded-sm shadow-xl z-20 min-w-[80px]"
+                >
+                  {['AED', 'USD', 'EUR', 'GBP'].map((c) => (
+                    <button
+                      key={c}
+                      onClick={() => {
+                        setCurrency(c as any);
+                        setShowCurrencies(false);
+                      }}
+                      className={cn(
+                        "w-full text-left px-4 py-1.5 text-[10px] uppercase tracking-widest transition-colors",
+                        currency === c ? "text-[var(--gold)] bg-[var(--gold)]/10" : "text-white/60 hover:text-[var(--gold)] hover:bg-white/5"
+                      )}
+                    >
+                      {c}
+                    </button>
+                  ))}
+                </motion.div>
+              </>
+            )}
+          </AnimatePresence>
+        </div>
+
         <button className="btn-quote hidden md:block" onClick={(e) => scrollTo('book', e)}>Get Quote</button>
         <button 
           className="hamburger relative z-[10000] flex flex-col items-end gap-1.5 p-2 bg-transparent border-none outline-none" 

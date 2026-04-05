@@ -107,15 +107,84 @@ export function StyleQuiz() {
               {step === 6 && (
                 <motion.div
                   key="lead"
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="text-center"
+                  transition={{ duration: 0.7 }}
+                  className="relative"
                 >
-                  <p className="font-serif text-3xl text-center mb-9 text-white">Almost there — where should we send your results?</p>
-                  <div className="flex flex-col gap-4 max-w-[400px] mx-auto">
-                    <input className="form-input" type="text" placeholder="Your Name" value={name} onChange={e => setName(e.target.value)} />
-                    <input className="form-input" type="tel" placeholder="+971 WhatsApp Number" value={wa} onChange={e => setWa(e.target.value)} />
-                    <button className="btn-full" onClick={submitLead}>Get My Style Report →</button>
+                  {/* Radial gradient backdrop */}
+                  <div
+                    className="absolute inset-0 -m-16 pointer-events-none"
+                    style={{
+                      background: 'radial-gradient(ellipse at center, rgba(28,31,38,0.9) 0%, rgba(10,10,10,0) 70%)',
+                    }}
+                    aria-hidden="true"
+                  />
+                  {/* Shimmer sweep */}
+                  <div className="quiz-shimmer" aria-hidden="true" />
+
+                  <div className="relative z-10 py-10 text-center">
+                    {/* Eyebrow */}
+                    <p className="text-[var(--gold)] text-[10px] uppercase tracking-[0.45em] mb-6 opacity-70">
+                      Private Style Consultation
+                    </p>
+
+                    {/* Main heading — Playfair serif, gold */}
+                    <h2
+                      className="font-serif text-white mb-5 leading-tight"
+                      style={{ fontSize: 'clamp(26px, 4vw, 40px)', letterSpacing: '0.06em' }}
+                    >
+                      Your Report is{' '}
+                      <span className="italic text-[var(--gold)]">Ready.</span>
+                    </h2>
+
+                    {/* Sub-description — muted serif */}
+                    <p
+                      className="text-white/35 max-w-[380px] mx-auto mb-14 leading-[1.9]"
+                      style={{ fontSize: '13px', fontFamily: "'Playfair Display', serif", letterSpacing: '0.02em' }}
+                    >
+                      Finalizing your tailored experience. Where shall we deliver your style portfolio?
+                    </p>
+
+                    {/* Underline-only inputs */}
+                    <div className="flex flex-col gap-10 max-w-[380px] mx-auto mb-12">
+                      <div className="relative">
+                        <label className="absolute -top-5 left-0 text-[var(--gold)] text-[9px] uppercase tracking-[0.4em] opacity-50">
+                          Your Name
+                        </label>
+                        <input
+                          type="text"
+                          placeholder="Full Name"
+                          value={name}
+                          onChange={e => setName(e.target.value)}
+                          className="quiz-lead-input"
+                        />
+                      </div>
+                      <div className="relative">
+                        <label className="absolute -top-5 left-0 text-[var(--gold)] text-[9px] uppercase tracking-[0.4em] opacity-50">
+                          WhatsApp
+                        </label>
+                        <input
+                          type="tel"
+                          placeholder="+971 — — — — —"
+                          value={wa}
+                          onChange={e => setWa(e.target.value)}
+                          className="quiz-lead-input"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Boutique CTA button */}
+                    <button
+                      onClick={submitLead}
+                      className="quiz-lead-btn"
+                    >
+                      Receive My Style Portfolio →
+                    </button>
+
+                    <p className="text-white/15 text-[11px] mt-6 tracking-wide">
+                      Your details remain private — exclusively for your consultation.
+                    </p>
                   </div>
                 </motion.div>
               )}

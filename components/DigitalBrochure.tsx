@@ -78,11 +78,11 @@ export function DigitalBrochure() {
           <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/40 to-black/80 z-[1]" />
           <div className="z-[2] text-center border-2 border-[var(--gold)] p-10 bg-[rgba(10,10,10,0.6)] backdrop-blur-md m-6 shadow-2xl relative">
             <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[var(--obsidian)] px-4 text-[10px] uppercase tracking-[0.4em] text-[var(--gold)]">Exclusive</div>
-            <h1 className="text-4xl md:text-6xl font-serif text-white font-light leading-snug mt-4">
-              Premium<br />
-              <em className="text-[var(--gold)] italic">Listing</em>
+            <h1 className="text-4xl md:text-5xl font-serif text-white font-light leading-snug mt-4 tracking-tight">
+              INTERIOR<br />
+              <em className="text-[var(--gold)] italic">ANTHOLOGY</em>
             </h1>
-            <p className="mt-6 text-[11px] text-[var(--silk-light)] tracking-[0.2em] uppercase">Property Details</p>
+            <p className="mt-8 text-[10px] text-[var(--silk-light)] tracking-[0.5em] uppercase font-light">EXCEPTIONAL SPACES</p>
           </div>
           <div className="absolute bottom-6 right-6 text-[var(--gold)] animate-pulse text-2xl z-[2]">&#8618;</div>
         </div>
@@ -221,14 +221,14 @@ export function DigitalBrochure() {
 
   return (
     <section className="relative w-full py-20 min-h-[90vh] bg-[var(--obsidian)] overflow-hidden flex flex-col items-center group">
-      <div className="text-center mb-12 relative z-10 px-5">
-        <span className="text-[12px] font-medium tracking-[0.35em] uppercase text-[var(--gold)] mb-4 block">
-          Property Portfolio
+      <div className="text-center mb-12 relative z-10 px-5 select-none">
+        <span className="text-[12px] font-medium tracking-[0.35em] md:tracking-[0.5em] uppercase text-[var(--gold)] mb-4 block">
+          DESIGN ANTHOLOGY
         </span>
         <h2 className="text-3xl md:text-5xl font-serif font-light text-white leading-tight">
-          View <em className="text-[var(--gold)] italic">Property Details</em>
+          Explore Our <em className="text-[var(--gold)] italic">Masterpieces</em>
         </h2>
-        <p className="text-[var(--silk-grey)] text-sm tracking-widest uppercase mt-4">Flip to Explore Listings</p>
+        <p className="text-[var(--silk-grey)] text-[10px] md:text-[12px] tracking-[0.3em] uppercase mt-5">DISCOVER THE ART OF LIVING</p>
       </div>
 
       <div className={cn("w-full max-w-[1000px] flex justify-center items-center perspective-1000 transition-opacity duration-1000", isLoaded ? "opacity-100" : "opacity-0")}>
