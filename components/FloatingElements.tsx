@@ -59,9 +59,7 @@ export function FloatingElements() {
         ))}
       </div>
 
-      <div className="quote-sidebar">
-        <button className="quote-trigger" onClick={() => document.getElementById('book')?.scrollIntoView({behavior:'smooth'})}>INSTANT QUOTE</button>
-      </div>
+
 
       <div className="theme-switcher">
         <div className={`theme-dot ${theme === 'midnight' ? 'active' : ''}`} style={{background:'#D4AF37'}} onClick={() => setTheme('midnight')} title="Midnight Gold"></div>
