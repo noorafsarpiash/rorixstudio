@@ -14,15 +14,15 @@ export function DigitalIdentity() {
     <section id="business-card" className="section-pad">
       <div className="container">
         <div className="section-header fade-in visible">
-          <span className="section-eyebrow">Digital Identity</span>
-          <h2 className="section-title">Your <em>Connection</em> to Excellence</h2>
+          <span className="section-eyebrow">Agent Connection</span>
+          <h2 className="section-title">Your <em>Property</em> Concierge</h2>
         </div>
         <div className="bcard fade-in visible">
           <div className="bcard-shimmer"></div>
           <div className="bcard-left">
             <div>
-              <p className="bcard-logo-text">RORIX STUDIO</p>
-              <p className="bcard-tagline">Crafting Dubai's Most Prestigious Spaces</p>
+              <p className="bcard-logo-text">CRIB CREW</p>
+              <p className="bcard-tagline">Your Gateway to Luxury Real Estate</p>
             </div>
             <div className="bcard-contacts">
               <div className="bcard-contact">
@@ -71,8 +71,8 @@ export function DigitalIdentity() {
                 <rect x="100" y="116" width="20" height="4" fill="#000"/>
               </svg>
             </div>
-            <p className="bcard-cta">Tap to Save Contact</p>
-            <p className="bcard-nfc">📱 Available as Physical NFC Card</p>
+            <p className="bcard-cta">Tap to Save Agent Contact</p>
+            <p className="bcard-nfc">📱 Instant Access via NFC Portfolio</p>
           </div>
         </div>
       </div>

@@ -48,6 +48,7 @@ Page.displayName = 'Page';
 export function DigitalBrochure() {
   const [currentPage, setCurrentPage] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
@@ -78,10 +79,10 @@ export function DigitalBrochure() {
           <div className="z-[2] text-center border-2 border-[var(--gold)] p-10 bg-[rgba(10,10,10,0.6)] backdrop-blur-md m-6 shadow-2xl relative">
             <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[var(--obsidian)] px-4 text-[10px] uppercase tracking-[0.4em] text-[var(--gold)]">Exclusive</div>
             <h1 className="text-4xl md:text-6xl font-serif text-white font-light leading-snug mt-4">
-              Elite<br />
-              <em className="text-[var(--gold)] italic">Digital Pass</em>
+              Premium<br />
+              <em className="text-[var(--gold)] italic">Listing</em>
             </h1>
-            <p className="mt-6 text-[11px] text-[var(--silk-light)] tracking-[0.2em] uppercase">Interactive Portfolio</p>
+            <p className="mt-6 text-[11px] text-[var(--silk-light)] tracking-[0.2em] uppercase">Property Details</p>
           </div>
           <div className="absolute bottom-6 right-6 text-[var(--gold)] animate-pulse text-2xl z-[2]">&#8618;</div>
         </div>
@@ -222,15 +223,15 @@ export function DigitalBrochure() {
     <section className="relative w-full py-20 min-h-[90vh] bg-[var(--obsidian)] overflow-hidden flex flex-col items-center group">
       <div className="text-center mb-12 relative z-10 px-5">
         <span className="text-[12px] font-medium tracking-[0.35em] uppercase text-[var(--gold)] mb-4 block">
-          Digital Portfolio
+          Property Portfolio
         </span>
         <h2 className="text-3xl md:text-5xl font-serif font-light text-white leading-tight">
-          Elite <em className="text-[var(--gold)] italic">Digital Pass</em>
+          View <em className="text-[var(--gold)] italic">Property Details</em>
         </h2>
-        <p className="text-[var(--silk-grey)] text-sm tracking-widest uppercase mt-4">Flip to Explore</p>
+        <p className="text-[var(--silk-grey)] text-sm tracking-widest uppercase mt-4">Flip to Explore Listings</p>
       </div>
 
-      <div className="w-full max-w-[1000px] flex justify-center items-center perspective-1000">
+      <div className={cn("w-full max-w-[1000px] flex justify-center items-center perspective-1000 transition-opacity duration-1000", isLoaded ? "opacity-100" : "opacity-0")}>
         {/* We add a custom generic rendering wrapper because react-pageflip will complain if it's rendered on server */}
         {isMounted && HTMLFlipBook ? (
           <div className="drop-shadow-2xl shadow-black relative z-10">
@@ -247,6 +248,7 @@ export function DigitalBrochure() {
               showCover={true}
               mobileScrollSupport={true}
               onFlip={onPageFlip}
+              onInit={() => setIsLoaded(true)}
               className="flip-book shadow-2xl mx-auto"
             >
               {pages.map((p, i) => (
@@ -258,7 +260,7 @@ export function DigitalBrochure() {
           </div>
         ) : (
           <div className="w-[450px] h-[600px] border border-[var(--gold)] animate-pulse flex items-center justify-center text-[var(--gold)] font-serif">
-            Loading Experience...
+            Loading Listings...
           </div>
         )}
       </div>
